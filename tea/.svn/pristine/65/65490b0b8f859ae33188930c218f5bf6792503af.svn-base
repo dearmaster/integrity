@@ -1,2 +1,0 @@
-insert into user_tbl(userName, realName, phone, mail, gender, birthday, address) values('dv01', 'Tigger', '18522868923', 'tigger.chen@goo.com', '男', '1979-03-20', 'Long Hill');
-insert into user_credential_tbl(userName, passWord) values('dev01', 'fish');
