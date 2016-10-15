@@ -1,0 +1,75 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+#loginMain {
+	height: 720px;
+}
+
+.bg-body {
+	background: url(../images/bg-body.jpg) repeat;
+	height: 100%;
+}
+.bg-body-green {
+	background: #356618;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+.bg-body-white {
+	background: #ffffff;
+	height: 100%;
+}
+
+#indexDiv, #loginDiv, #registerDiv {
+	/* border: 1px solid black; */
+	margin-top: 60px;
+	width: 100%;
+}
+
+#headMain > a > img {
+	display: block;
+	margin-left: 200px;
+}
+#headMain > #welcome {
+	display: block;
+	float: left;
+	margin-top: 75px;
+}
+#headMain > #logo {
+	background: url(../images/logo.png) no-repeat;
+	height: 100px;
+	display: block;
+	margin-left: 240px;
+}
+#headMain > #tabs > ul {
+	background: #4b4b4b;
+	float: left;
+	list-style: none;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+#headMain > #tabs > ul > li {
+	float: left;
+	position: relative;
+	width: 150px;
+}
+#headMain > #tabs > ul > li > a {
+	color: #f0f2c9;
+	display: block;
+	letter-spacing: 0.1em;
+	line-height: 45px;
+	text-align: center;
+	text-decoration: none;
+}
+#headMain > #tabs > ul > li.current > a {
+	background: #96b285;
+}
+#headMain > #tabs > ul > li > a:hover {
+	background: url(../images/inter-bg-01.png) no-repeat 0px -40px;
+}

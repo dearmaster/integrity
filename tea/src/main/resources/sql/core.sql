@@ -1,0 +1,1 @@
+insert into credential_tbl(userName, passWord) values('a', 'b');

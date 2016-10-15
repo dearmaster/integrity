@@ -1,0 +1,11 @@
+
+
+
+hibernate.hbm2ddl.auto.DEV=update
+hibernate.show_sql.DEV=true
+
+hibernate.hbm2ddl.auto.UAT=create-drop
+hibernate.show_sql.UAT=true
+
+hibernate.hbm2ddl.auto.PROD=update
+hibernate.show_sql.PROD=false
