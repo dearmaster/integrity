@@ -3,6 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <import resource="crm-service.xml"/>
+    <bean name="userService" class="com.master.crm.service.impl.UserServiceImpl">
+    </bean>
+
+    <bean name="userAction" class="com.master.crm.action.UserAction" scope="prototype">
+        <property name="userService" ref="userService"/>
+    </bean>
 
 </beans>

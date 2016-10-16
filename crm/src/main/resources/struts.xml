@@ -9,10 +9,6 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
     <constant name="struts.devMode" value="true"/>
 
-    <package name="user" extends="struts-default" namespace="/user">
-        <action name="*" class="userAction" method="{1}User">
-            <result name="success">/index.jsp</result>
-        </action>
-    </package>
+    <include file="action-mappings.xml"/>
 
 </struts>

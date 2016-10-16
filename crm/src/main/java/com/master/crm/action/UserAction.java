@@ -21,6 +21,7 @@ public class UserAction extends ActionSupport implements ServletRequestAware {
     }
 
     public String addUser() throws Exception {
+        logger.info(this);
         logger.info(request.getSession().getId() + " - add user");
         return SUCCESS;
     }
