@@ -6,4 +6,8 @@
     <bean name="userService" class="com.master.crm.service.impl.UserServiceImpl">
     </bean>
 
+    <bean name="userAction" class="com.master.crm.action.UserAction">
+        <property name="userService" ref="userService"/>
+    </bean>
+
 </beans>
