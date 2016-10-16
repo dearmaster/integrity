@@ -15,6 +15,14 @@ public class UserActionTest extends StrutsSpringTestCase {
     private ActionProxy proxy;
     private UserAction userAction;
 
+    private static final User user;
+    private static final String password;
+
+    static {
+        password = "pwd";
+        user = new User("lily", "女", "Shanghai", "lily.h@fox.com", null, new Date());
+    }
+
     @Before
     public void setUp() throws Exception {
         try {
@@ -31,13 +39,13 @@ public class UserActionTest extends StrutsSpringTestCase {
 
     @Test
     public void testAddUser() throws Exception {
-        User user = new User("lily", "女", "Shanghai", "lily.h@fox.com", null, new Date());
         request.setAttribute("user", user);
-        request.setParameter("password", "123");
-        request.setParameter("user.name", "test");
+        request.setParameter("password", password);
+        request.setParameter("user.name", user.getName());
 
         proxy = getActionProxy("/user/add");
         userAction = (UserAction) proxy.getAction();
+
         String result = proxy.execute();
         Assert.assertEquals("success", result);
     }
