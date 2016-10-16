@@ -6,7 +6,7 @@ import java.util.Set;
 
 public interface UserService {
 
-    void add(User user);
+    void add(User user, String password);
 
     void del(User user);
 

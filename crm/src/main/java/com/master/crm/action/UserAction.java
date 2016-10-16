@@ -26,13 +26,12 @@ public class UserAction extends ActionSupport implements ServletRequestAware {
     }
 
     public String addUser() throws Exception {
-        logger.info(user);
-        logger.info(password);
-        logger.info(userService);
+        userService.add(user, password);
         return SUCCESS;
     }
 
     public String delUser() throws Exception {
+        userService.del(user);
         return SUCCESS;
     }
 
