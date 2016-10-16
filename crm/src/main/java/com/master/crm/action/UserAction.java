@@ -3,12 +3,17 @@ package com.master.crm.action;
 import com.master.crm.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.log4j.Logger;
+import org.apache.struts2.interceptor.ServletRequestAware;
 
-public class UserAction extends ActionSupport {
+import javax.servlet.http.HttpServletRequest;
+
+public class UserAction extends ActionSupport implements ServletRequestAware {
 
     private static final Logger logger = Logger.getLogger(UserAction.class);
 
     private UserService userService;
+
+    private HttpServletRequest request;
 
     @Override
     public String execute() throws Exception {
@@ -16,7 +21,7 @@ public class UserAction extends ActionSupport {
     }
 
     public String addUser() throws Exception {
-        logger.info("add user");
+        logger.info(request.getSession().getId() + " - add user");
         return SUCCESS;
     }
 
@@ -32,4 +37,8 @@ public class UserAction extends ActionSupport {
         this.userService = userService;
     }
 
+    @Override
+    public void setServletRequest(HttpServletRequest request) {
+        this.request = request;
+    }
 }
