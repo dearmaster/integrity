@@ -1,5 +1,6 @@
 package com.master.crm.action;
 
+import com.master.crm.model.User;
 import com.master.crm.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.log4j.Logger;
@@ -13,6 +14,10 @@ public class UserAction extends ActionSupport implements ServletRequestAware {
 
     private UserService userService;
 
+    private User user;
+
+    private String password;
+
     private HttpServletRequest request;
 
     @Override
@@ -21,8 +26,9 @@ public class UserAction extends ActionSupport implements ServletRequestAware {
     }
 
     public String addUser() throws Exception {
-        logger.info(this);
-        logger.info(request.getSession().getId() + " - add user");
+        logger.info(user);
+        logger.info(password);
+        logger.info(userService);
         return SUCCESS;
     }
 
@@ -41,5 +47,21 @@ public class UserAction extends ActionSupport implements ServletRequestAware {
     @Override
     public void setServletRequest(HttpServletRequest request) {
         this.request = request;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
