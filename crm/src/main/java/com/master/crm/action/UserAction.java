@@ -9,4 +9,12 @@ public class UserAction extends ActionSupport {
         return SUCCESS;
     }
 
+    public String addUser() throws Exception {
+        return SUCCESS;
+    }
+
+    public String delUser() throws Exception {
+        return SUCCESS;
+    }
+
 }
