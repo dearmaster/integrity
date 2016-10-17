@@ -5,13 +5,19 @@ import com.master.crm.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.log4j.Logger;
 import org.apache.struts2.interceptor.ServletRequestAware;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
+@Component("userAction")
+@Scope("prototype")
 public class UserAction extends ActionSupport implements ServletRequestAware {
 
     private static final Logger logger = Logger.getLogger(UserAction.class);
 
+    @Autowired
     private UserService userService;
 
     private User user;

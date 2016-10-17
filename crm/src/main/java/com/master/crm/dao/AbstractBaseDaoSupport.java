@@ -2,6 +2,7 @@ package com.master.crm.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashSet;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.Set;
 
 public abstract class AbstractBaseDaoSupport<T> implements BaseDaoInterface<T> {
 
+    @Autowired
     protected SessionFactory sessionFactory;
 
     @Override

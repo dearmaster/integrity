@@ -4,15 +4,19 @@ import com.master.crm.dao.UserDao;
 import com.master.crm.model.User;
 import com.master.crm.service.UserService;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Set;
 
+@Service("userService")
 @Transactional
 public class UserServiceImpl implements UserService {
 
     private static final Logger logger = Logger.getLogger(UserServiceImpl.class);
 
+    @Autowired
     private UserDao userDao;
 
     @Override

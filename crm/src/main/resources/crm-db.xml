@@ -5,8 +5,4 @@
 
     <import resource="dataSource.xml"/>
 
-    <bean name="userDao" class="com.master.crm.dao.impl.UserDaoImpl">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
-
 </beans>
