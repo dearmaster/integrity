@@ -1,15 +1,28 @@
 package com.master.crm.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "user_tbl", uniqueConstraints = { @UniqueConstraint(columnNames = { "phone", "mail" }) })
 public class User {
 
+    @Id
+    @Basic(optional = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Integer id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "gender")
     private String gender;
+    @Column(name = "address")
     private String address;
+    @Column(name = "mail")
     private String mail;
+    @Column(name = "phone")
     private String phone;
+    @Column(name = "birthday")
     private Date birthday;
 
     public User() {

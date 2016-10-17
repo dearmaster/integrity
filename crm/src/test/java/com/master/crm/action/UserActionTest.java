@@ -24,6 +24,7 @@ public class UserActionTest extends StrutsSpringTestCase {
     static {
         password = "lily@sd,";
         user = new User("lily", "女", "Shanghai", "lily.h@fox.com", null, new Date());
+
     }
 
     @Before
@@ -33,6 +34,13 @@ public class UserActionTest extends StrutsSpringTestCase {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        request.setAttribute("user", user);
+        request.setParameter("password", password);
+        request.setParameter("user.name", user.getName());
+        request.setParameter("user.gender", user.getGender());
+        request.setParameter("user.address", user.getAddress());
+        request.setParameter("user.mail", user.getMail());
+        request.setParameter("user.phone", user.getPhone());
     }
 
     @After
@@ -42,16 +50,9 @@ public class UserActionTest extends StrutsSpringTestCase {
 
     @Test
     public void testAddUser() throws Exception {
-        request.setAttribute("user", user);
-        request.setParameter("password", password);
-        request.setParameter("user.name", user.getName());
 
         proxy = getActionProxy("/user/add");
         userAction = (UserAction) proxy.getAction();
-
-        if(logger.isDebugEnabled()) {
-            logger.debug(userAction);
-        }
 
         String result = proxy.execute();
         Assert.assertEquals("success", result);
@@ -59,16 +60,9 @@ public class UserActionTest extends StrutsSpringTestCase {
 
     @Test
     public void testDelUser() throws Exception {
-        request.setAttribute("user", user);
-        request.setParameter("password", password);
-        request.setParameter("user.name", user.getName());
 
         proxy = getActionProxy("/user/del");
         userAction = (UserAction) proxy.getAction();
-
-        if(logger.isDebugEnabled()) {
-            logger.debug(userAction);
-        }
 
         String result = proxy.execute();
         Assert.assertEquals("success", result);
